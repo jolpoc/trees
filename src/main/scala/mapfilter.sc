@@ -1,0 +1,7 @@
+val mySeq = Seq("Valdis","Liga","Maija","Voldemars","Sophia")
+mySeq.map(txt => txt.length).foreach(println)
+//mySeq.map(txt => txt.toUpperCase).foreach(println)
+println("Printing only long names!")
+//val longCapitalNames = mySeq.map(txt => txt.toUpperCase).filter(_.length > 5)
+val longCapitalNames = mySeq.filter(txt => txt.length > 5).map(txt => txt.toUpperCase)
+longCapitalNames.foreach(println)
