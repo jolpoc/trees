@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException
+import java.io.{File, FileNotFoundException, PrintWriter}
 
 import scala.io.Source
 
@@ -31,7 +31,14 @@ var longestLine = ""
 val mostWords =myText.sortBy(_.split( " ").size).toSeq(0)
 "And looked down".slice(0,3)
 "An".slice(0,3)
+myText.filter(_.matches( ".*[verge]"))
 
+val pw = new PrintWriter(new File( "c:/poems/rfrost.txt"))
+pw.write("My results are: \n")
+myText.filter(_.contains("road")).map(_+"\n").foreach(pw.write)
+for (myLine <- myText)
+  if (myLine.contains("road"))
+    pw.write(myLine + "\n")
 //val myLines = Source.fromFile(fileName).getLines()
 ////val myText = myLines.toSeq
 //myLines.foreach(println) // iterator is exhausted
