@@ -40,4 +40,12 @@ object Elections extends App {
   val allVoters = people.filter(_.isVoter)
   allVoters.foreach(_.prettyPrint())
   allVoters.foreach(human => println(human.getFullName()))
+
+  val lastNamesSorted = people.sortBy(_.lastName.length)
+  val longestLastName = lastNamesSorted.takeRight(1)
+  lastNamesSorted.foreach(human => println(human.lastName))
+  longestLastName.foreach(human => println(s"The longest last name is: ${human.lastName}."))
+
+  println(s"The longest last name is: ${(people.map(human=> human.lastName.length).sorted.last)} chars long")
+print(s"Longest is ${people.map(h => h.lastName).sortBy(_.length).last}")
 }
