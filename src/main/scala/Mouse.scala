@@ -1,4 +1,4 @@
-//when we extend an existing
-class Mouse (name:String) extends Animal (name = name) {
-def squeek () = println(s"Squeee my is $name, and also $name")
+//when we extend an existing class we need to pass our construction arguments to them
+class Mouse(name:String) extends Animal(name = name) {
+  def squeek() = println(s"Squeee my name is $name, and also $name")
 }

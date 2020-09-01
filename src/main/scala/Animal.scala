@@ -1,3 +1,3 @@
 class Animal(val name:String) {
-  def prettyPrint():Unit
+  def prettyPrint() = println(s"My name is $name")
 }
