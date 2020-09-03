@@ -1,7 +1,7 @@
 object Elections extends App {
   val adam = new Person ("Adam","Sandler", 49)
   val tommy = new Person("Tom","Sawyer",12)
-  println(adam.fixedFirstName)
+  println(adam.firstName)
   println(adam.lastName)
   println(adam.age)
   adam.prettyPrint()
@@ -47,5 +47,10 @@ object Elections extends App {
   longestLastName.foreach(human => println(s"The longest last name is: ${human.lastName}."))
 
   println(s"The longest last name is: ${(people.map(human=> human.lastName.length).sorted.last)} chars long")
-print(s"Longest is ${people.map(h => h.lastName).sortBy(_.length).last}")
+println(s"Longest is ${people.map(h => h.lastName).sortBy(_.length).last}")
+  tommy.prettyPrint()
+  tommy.setLastName("Tomster").setAge(55).prettyPrint()
+  tommy.setLastName("Weird").setFirstName("Al").setAge(35).prettyPrint()
+tommy.setFirstName("George").setAge(29).prettyPrint()
+
 }
